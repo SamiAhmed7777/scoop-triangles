@@ -1,17 +1,16 @@
 {
-    "version": "5.3.6",
+    "version": "6.2.6.7",
     "description": "Cryptographic Triangles (TRI) cryptocurrency wallet with PoS staking and encrypted messaging",
     "homepage": "https://cryptographic-triangles.org",
     "license": "MIT",
     "architecture": {
         "64bit": {
-            "url": "https://github.com/SamiAhmed7777/triangles_v5/releases/download/v5.3.6/Cryptographic-Triangles-5.3.6-win-x64.zip",
-            "hash": "6f002a669a7e92aaf3d8dd7b1ae80f06a086c99a15ca05cf107665009ffc06b7"
+            "url": "https://github.com/SamiAhmed7777/triangles_v5/releases/download/v6.2.6.7/Cryptographic-Triangles-6.2.6.7-win-x64.zip",
+            "hash": "fed9f7aa8ec0a86c02cb114faa294324d407fd3ae8743d6526ee111107631207"
         }
     },
     "bin": [
-        "triangles-qt.exe",
-        "trianglesd.exe"
+        "triangles-qt.exe"
     ],
     "shortcuts": [
         ["triangles-qt.exe", "Cryptographic Triangles"]
@@ -22,7 +21,12 @@
     "autoupdate": {
         "architecture": {
             "64bit": {
-                "url": "https://github.com/SamiAhmed7777/triangles_v5/releases/download/v$version/Cryptographic-Triangles-$version-win-x64.zip"
+                "url": "https://github.com/SamiAhmed7777/triangles_v5/releases/download/v$version/Cryptographic-Triangles-$version-win-x64.zip",
+                "hash": {
+                    "url": "https://api.github.com/repos/SamiAhmed7777/triangles_v5/releases/tags/v$version",
+                    "jp": "$.assets[?(@.name=='Cryptographic-Triangles-$version-win-x64.zip')].digest",
+                    "regex": "sha256:([a-f0-9]{64})"
+                }
             }
         }
     }
